@@ -1,5 +1,3 @@
-package Pokemon;
-
 import javax.crypto.ShortBufferException;
 import java.io.File;
 import java.io.FileWriter;
