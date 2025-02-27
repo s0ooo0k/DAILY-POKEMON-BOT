@@ -1,0 +1,40 @@
+name: Daily Pokemon
+
+on:
+    workflow_dispatch:
+    schedule:
+        - cron: '0 0 * * *';
+
+jobs:
+    make-file:
+        runs-on: ubuntu-latest
+        steps:
+          - name: 파일 불러오기
+            uses: actions/checkout@v4
+    
+          - name: Java 17 
+            uses: actions/setup-java@v4
+            with:
+              distribution: temurin
+              java-version: '17'
+    
+          - name: Compile and Code
+            run: |
+              javac App.java
+              java App
+            env:
+              LLM_API_KEY : ${{ secrets.LLM_API_KEY }}
+              LLM_API_URL : ${{ secrets.LLM_API_URL }}
+              LUCKY_PROMPT : ${{ vars.LUCKY_PROMPT }}
+              PROMPT : ${{ vars.PROMPT }}
+              SLACK_WEBHOOK_URL : ${{ secrets.SLACK_WEBHOOK_URL }}
+              NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
+              NAVER_CLIENT_SECRET: ${{ secrets.NAVER_CLIENT_SECRET }}
+        
+          - name: 실행 결과로 나온 파일을 커밋
+            uses: EndBug/add-and-commit@v9
+            with:
+                author_name: ${{ github.actor }}
+                author_email: ${{ github.actor }}@users.noreply.github.com
+                message: "모니터링 파일 저장"
+                add: "."
