@@ -84,7 +84,7 @@ class Monitoring {
 
     public Monitoring() {
         logger = Logger.getLogger(Monitoring.class.getName());
-        logger.setLevel(Level.SEVERE);
+        logger.setLevel(Level.INFO);
         logger.info("Pokemon.Monitoring 객체 생성");
     }
 
@@ -134,7 +134,7 @@ class Monitoring {
             imageLink = imageResponse
                     .split("\"link\":\"")[1].split("\",")[0]  // "link": 이후 값 추출
                     .replace("\\/", "/")  // \/ → / 로 변경
-                    .split("\\?")[0]; // URL 뒤에 ? 파라미터 제거
+                    .replaceAll("[?#].*", "");
             logger.info(imageLink);
             shopMap.put("imageLink", imageLink);
 
