@@ -1,2 +1,3 @@
 # DAILY-POKEMON-BOT
 NAVER SEARCH API + GEMINI API + SLACK BOT
+자바스러운 코드로 수정 예정...
