@@ -83,7 +83,7 @@ class Monitoring {
     private final Logger logger;
 
     public Monitoring() {
-        logger = Logger.getLogger(App.Monitoring.class.getName());
+        logger = Logger.getLogger(Monitoring.class.getName());
         logger.setLevel(Level.SEVERE);
         logger.info("Pokemon.Monitoring 객체 생성");
     }
