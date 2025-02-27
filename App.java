@@ -210,7 +210,7 @@ class GetKeyword {
                             "role": "user",
                             "parts": [
                                 {
-                                    "text": "%s를 바탕으로 오늘의 포켓몬을 추천해줘"
+                                    "text": "%s"
                                 }
                             ]
                         }
