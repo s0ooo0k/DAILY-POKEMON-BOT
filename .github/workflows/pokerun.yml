@@ -36,5 +36,5 @@ jobs:
             with:
                 author_name: ${{ github.actor }}
                 author_email: ${{ github.actor }}@users.noreply.github.com
-                message: "모니터링 파일 저장"
+                message: "pocketmon data"
                 add: "."
