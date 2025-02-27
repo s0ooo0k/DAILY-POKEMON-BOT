@@ -219,10 +219,10 @@ class GetKeyword {
                                 "stopSequences": [
                                     "Title"
                                 ],
-                                "temperature": 1.5,
+                                "temperature": 2.0,
                                 "maxOutputTokens": 800,
                                 "topP": 0.8,
-                                "topK": 10
+                                "topK": 30
                     }
                 }
                 """, prompt);
